@@ -5,6 +5,7 @@ import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
 
 const screens = {
+  //top screen to rendor first
   Home: {
     screen: Home,
   },
@@ -13,6 +14,6 @@ const screens = {
   },
 };
 
-const HomeStack = createStackNavigator(screens);
+const HomeStack = createStackNavigator(screens); //creates nav stack and passes the screen
 
-export default createAppContainer(HomeStack);
+export default createAppContainer(HomeStack); //returns a container of nav stack to rendor

@@ -1,19 +1,28 @@
-import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
 
 const screens = {
-  //top screen to rendor first
   Home: {
     screen: Home,
+    navigationOptions: {
+      title: "GameZone",
+    },
   },
   ReviewDetails: {
     screen: ReviewDetails,
+    navigationOptions: {
+      title: "Review Details",
+    },
   },
 };
 
-const HomeStack = createStackNavigator(screens); //creates nav stack and passes the screen
+// home stack navigator screens
+const HomeStack = createStackNavigator(screens, {
+  defaultNavigationOptions: {
+    headerTintColor: "#444",
+    headerStyle: { backgroundColor: "#eee", height: 60 },
+  },
+});
 
-export default createAppContainer(HomeStack); //returns a container of nav stack to rendor
+export default HomeStack;
